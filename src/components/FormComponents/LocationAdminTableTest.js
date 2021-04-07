@@ -117,6 +117,7 @@ const LocationAdminTable = (props) => {
       dataIndex: "name",
       width: "25%",
       editable: true,
+      sorter: (a, b) => a.name.localeCompare(b.name)
     },
     {
       title: "Description",
