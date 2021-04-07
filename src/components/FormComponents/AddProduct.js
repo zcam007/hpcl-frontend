@@ -281,7 +281,7 @@ const AddProduct = (props) => {
     };
     axios
       .post(
-        `${global.config.apiEndpoint}/api/product/add`,
+        `${global.config.apiEndpoint}/product/add`,
         querystring.stringify(urlObject),
         {
           headers: {
