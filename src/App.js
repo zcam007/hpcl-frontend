@@ -1,7 +1,7 @@
 import "./App.css";
 import "antd/dist/antd.css";
 import React, { useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <div className="wrapper">
         <h1>Application</h1>
-        <BrowserRouter>
+        <HashRouter>
           <Switch>
             <Route path="/dashboard">
               <Dashboard />
@@ -29,7 +29,7 @@ function App() {
               <Admin />
             </Route>
           </Switch>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </div>
   );
