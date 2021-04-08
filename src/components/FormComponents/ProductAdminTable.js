@@ -135,6 +135,8 @@ const ProductAdminTable = (props) => {
           dynamicCol.push(column);
         });
       }
+      // show delete option only for admin side
+      if(props.privacy!="user"){
       dynamicCol = dynamicCol.concat([
         {
           title: "Operations",
@@ -150,6 +152,7 @@ const ProductAdminTable = (props) => {
             ) : null,
         },
       ]);
+    }
       // console.log(dynamicCol)
       // let customColumns=
       // console.log(dynamicCol)

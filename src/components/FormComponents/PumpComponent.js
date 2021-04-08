@@ -15,64 +15,39 @@ const PumpComponent = (props) => {
   return (
     <>
       <Row>
-        <Col>
-          <Form.Item
-            name="type"
-            label="Type"
-            //   rules={[
-            //     {
-            //       required: true,
-            //       message: 'Please input the serial number of the product!',
-            //     },
-            //   ]}
-          >
-            <Input />
-          </Form.Item>
-        </Col>
+{/*         
         <Col>
           <Form.Item
             name="hpm"
             label="HPM"
-            //   rules={[
-            //     {
-            //       required: true,
-            //       message: 'Please input the serial number of the product!',
-            //     },
-            //   ]}
           >
             <InputNumber />
           </Form.Item>
-        </Col>
+        </Col> */}
 
         <Col>
           <Form.Item
             name="kwhp"
-            label="KW/HP"
-            //   rules={[
-            //     {
-            //       required: true,
-            //       message: 'Please input the serial number of the product!',
-            //     },
-            //   ]}
+            label="HP"
           >
             <Input />
           </Form.Item>
         </Col>
 
-        <Col>
-          <Form.Item
-            name="capacity"
-            label="Capacity"
-            //   rules={[
-            //     {
-            //       required: true,
-            //       message: 'Please input the serial number of the product!',
-            //     },
-            //   ]}
-          >
-            <Input />
-          </Form.Item>
-        </Col>
+        <Col span={8}>
+            <Form.Item
+              name="rpm"
+              label="RPM"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input the rpm of the product!",
+                },
+              ]}
+            >
+              <InputNumber />
+            </Form.Item>
+          </Col>
       </Row>
     </>
   );

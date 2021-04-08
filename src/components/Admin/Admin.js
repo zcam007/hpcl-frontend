@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs } from "antd";
 // import LocationAdminTable from '../FormComponents/LocationAdminTable'
-import LocationAdminTable from "../FormComponents/LocationAdminTableTest";
+import LocationAdminTable from "../FormComponents/LocationAdminTable";
 import AddLocation from "../FormComponents/AddLocationBtn";
 import AddProduct from "../FormComponents/AddProduct";
 import ProductAdminTable from "../FormComponents/ProductAdminTable";

@@ -4,8 +4,9 @@ import axios from "axios";
 import "../../config";
 var querystring = require("querystring");
 
-const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
+const CollectionCreateForm = ({ visible, onCreate, onCancel,type }) => {
   const [form] = Form.useForm();
+  // console.log(title)
   const normFile = (e) => {
     console.log("Upload event:", e);
 
@@ -15,10 +16,11 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
 
     return e && e.fileList;
   };
+  const title=`Add new ${type}`
   return (
     <Modal
       visible={visible}
-      title="Add New Location"
+      title={title}
       okText="Submit"
       cancelText="Cancel"
       onCancel={onCancel}
@@ -48,7 +50,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           rules={[
             {
               required: true,
-              message: "Please input the name of the Location!",
+              message: `Please input the name of the ${type}!`,
             },
           ]}
         >
@@ -101,6 +103,7 @@ const AddLocation = (props) => {
       });
     setVisible(false);
   };
+  // const =props.type;
 
   return (
     <div>
@@ -118,6 +121,7 @@ const AddLocation = (props) => {
         onCancel={() => {
           setVisible(false);
         }}
+        type={props.type}
       />
     </div>
   );

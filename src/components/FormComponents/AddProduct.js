@@ -92,6 +92,20 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         }}
       >
         <Row justify="start">
+        <Col span={12}>
+            <Form.Item
+              name="slnumber"
+              label="SL Number"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input the serial number of the product!",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+          </Col>
           <Col span={12}>
             <Form.Item
               name="make"
@@ -106,7 +120,11 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
               <Input />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          
+        </Row>
+
+        <Row justify="start">
+        <Col span={8}>
             <Form.Item
               name="model"
               label="Model"
@@ -120,27 +138,26 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
               <Input />
             </Form.Item>
           </Col>
+          <Col span={8}>
+          <Form.Item
+            name="type"
+            label="Type"
+          >
+            <Input />
+          </Form.Item>
+        </Col>
+        <Col span={8}>
+          <Form.Item
+            name="capacity"
+            label="Capacity"
+          >
+            <Input />
+          </Form.Item>
+        </Col>
         </Row>
 
         <Row justify="start">
           <Col span={12}>
-            <Form.Item
-              name="slnumber"
-              label="SL Number"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input the serial number of the product!",
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-          </Col>
-        </Row>
-
-        <Row justify="start">
-          <Col span={8}>
             <Form.Item
               name="voltage"
               label="Voltage"
@@ -154,22 +171,9 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
               <InputNumber />
             </Form.Item>
           </Col>
-          <Col span={8}>
-            <Form.Item
-              name="rpm"
-              label="RPM"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input the rpm of the product!",
-                },
-              ]}
-            >
-              <InputNumber />
-            </Form.Item>
-          </Col>
+          
 
-          <Col span={8}>
+          <Col span={12}>
             <Form.Item
               name="phase"
               label="Phase"
@@ -241,7 +245,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           </Col>
         </Row>
 
-        {selectedCategory == "Pump" ? <PumpComponent /> : ""}
+        {selectedCategory.toLowerCase().includes("pump") ? <PumpComponent /> : ""}
 
         {/* <Form.Item
         name="upload"
