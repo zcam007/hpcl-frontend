@@ -5,12 +5,20 @@ import LocationAdminTable from "../FormComponents/LocationAdminTable";
 import AddLocation from "../FormComponents/AddLocationBtn";
 import AddProduct from "../FormComponents/AddProduct";
 import ProductAdminTable from "../FormComponents/ProductAdminTable";
+import useToken from "../../userToken";
+import Login from "../Login/Login";
 const { TabPane } = Tabs;
+
+
 
 function callback(key) {
   console.log(key);
 }
 export default function Admin() {
+  const { token, setToken } = useToken();
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
   return (
     <div>
       <h3>This is admin side of the portal</h3>
@@ -21,7 +29,7 @@ export default function Admin() {
           {/* <LocationAdminTable/> */}
           <LocationAdminTable type="location" />
         </TabPane>
-        <TabPane tab="Category" key="2">
+        <TabPane tab="Equipment" key="2">
           <AddLocation type="category" />
           <LocationAdminTable type="category" />
         </TabPane>

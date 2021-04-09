@@ -7,15 +7,14 @@ import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
 import useToken from "./userToken";
 
-const apiEndpoint = `https://hpcl-chandu-app.herokuapp.com/api/`;
 
 function App() {
   // const token = getToken();
   // const [token, setToken] = useState();
-  const { token, setToken } = useToken();
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
+  // const { token, setToken } = useToken();
+  // if (!token) {
+  //   return <Login setToken={setToken} />;
+  // }
   return (
     <div className="App">
       <div className="wrapper">
