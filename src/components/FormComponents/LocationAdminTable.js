@@ -44,7 +44,7 @@ const LocationAdminTable = (props) => {
   const [form] = Form.useForm();
   const [data, setData] = useState(null);
   const [editingKey, setEditingKey] = useState("");
-  const [loading,setLoading]=useState(true)
+  const [loading, setLoading] = useState(true);
   const isEditing = (record) => record.key === editingKey;
 
   // console.log(props)
@@ -54,10 +54,11 @@ const LocationAdminTable = (props) => {
   async function getLatestData() {
     const response = await axios.get(
       `${global.config.apiEndpoint}/${props.type}/all`
-    )
-    if(response.data.result.length>0){
-      console.log("length>0")
-      setLoading(false)}
+    );
+    if (response.data.result.length > 0) {
+      console.log("length>0");
+      setLoading(false);
+    }
     let i = 0;
     let dataFromApi = response.data.result.map((d) => {
       // console.log(d)
@@ -120,7 +121,7 @@ const LocationAdminTable = (props) => {
       dataIndex: "name",
       width: "25%",
       editable: true,
-      sorter: (a, b) => a.name.localeCompare(b.name)
+      sorter: (a, b) => a.name.localeCompare(b.name),
     },
     {
       title: "Description",

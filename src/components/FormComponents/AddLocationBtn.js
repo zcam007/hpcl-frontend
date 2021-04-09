@@ -4,7 +4,7 @@ import axios from "axios";
 import "../../config";
 var querystring = require("querystring");
 
-const CollectionCreateForm = ({ visible, onCreate, onCancel,type }) => {
+const CollectionCreateForm = ({ visible, onCreate, onCancel, type }) => {
   const [form] = Form.useForm();
   // console.log(title)
   const normFile = (e) => {
@@ -16,7 +16,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel,type }) => {
 
     return e && e.fileList;
   };
-  const title=`Add new ${type}`
+  const title = `Add new ${type}`;
   return (
     <Modal
       visible={visible}

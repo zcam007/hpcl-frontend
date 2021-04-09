@@ -7,27 +7,20 @@ import {
   InputNumber,
 } from "antd";
 
-const PumpComponent = (props) => {
+const CsuComponent = (props) => {
   return (
     <>
       <Row>
-        {/*         
+                
         <Col>
           <Form.Item
-            name="hpm"
-            label="HPM"
+            name="cfm"
+            label="CFM"
           >
             <InputNumber />
           </Form.Item>
-        </Col> */}
-
-        <Col>
-          <Form.Item name="hp" label="HP">
-            <Input />
-          </Form.Item>
         </Col>
-
-        <Col span={8}>
+<Col>
           <Form.Item
             name="rpm"
             label="RPM"
@@ -41,9 +34,15 @@ const PumpComponent = (props) => {
             <InputNumber />
           </Form.Item>
         </Col>
+        <Col>
+          <Form.Item name="hp" label="HP">
+            <Input />
+          </Form.Item>
+        </Col>
+
       </Row>
     </>
   );
 };
 
-export default PumpComponent;
+export default CsuComponent;

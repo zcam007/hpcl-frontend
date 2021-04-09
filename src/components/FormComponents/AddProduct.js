@@ -13,6 +13,11 @@ import {
 import PumpComponent from "./PumpComponent";
 import "../../config";
 import axios from "axios";
+import ChillerComponent from "./ProductComponents/ChillerComponent";
+import CompresserComponent from "./ProductComponents/CompresserComponent";
+import AhuComponent from "./ProductComponents/AhuComponent";
+import CsuComponent from "./ProductComponents/CsuComponent";
+import CassetteAcComponent from "./ProductComponents/CassetteAcComponent";
 const { Option } = Select;
 
 var querystring = require("querystring");
@@ -92,7 +97,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         }}
       >
         <Row justify="start">
-        <Col span={12}>
+          <Col span={12}>
             <Form.Item
               name="slnumber"
               label="SL Number"
@@ -120,11 +125,10 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
               <Input />
             </Form.Item>
           </Col>
-          
         </Row>
 
         <Row justify="start">
-        <Col span={8}>
+          <Col span={8}>
             <Form.Item
               name="model"
               label="Model"
@@ -139,21 +143,15 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             </Form.Item>
           </Col>
           <Col span={8}>
-          <Form.Item
-            name="type"
-            label="Type"
-          >
-            <Input />
-          </Form.Item>
-        </Col>
-        <Col span={8}>
-          <Form.Item
-            name="capacity"
-            label="Capacity"
-          >
-            <Input />
-          </Form.Item>
-        </Col>
+            <Form.Item name="type" label="Type">
+              <Input />
+            </Form.Item>
+          </Col>
+          <Col span={8}>
+            <Form.Item name="capacity" label="Capacity">
+              <Input />
+            </Form.Item>
+          </Col>
         </Row>
 
         <Row justify="start">
@@ -171,12 +169,11 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
               <InputNumber />
             </Form.Item>
           </Col>
-          
 
           <Col span={12}>
             <Form.Item
               name="phase"
-              label="Phase"
+              label="Current"
               rules={[
                 {
                   required: true,
@@ -185,14 +182,10 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
               ]}
             >
               {/* <Input /> */}
-              <Select
-          placeholder="Select a option"
-          allowClear
-        >
-          <Option value="1Phase">1 Phase</Option>
-          <Option value="2Phase">2 Phase</Option>
- 
-        </Select>
+              <Select placeholder="Select a option" allowClear>
+                <Option value="1Phase">1 Phase</Option>
+                <Option value="3Phase">3 Phase</Option>
+              </Select>
             </Form.Item>
           </Col>
         </Row>
@@ -252,8 +245,89 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             </Form.Item>
           </Col>
         </Row>
+        {selectedCategory.toLowerCase().includes("compresser") ? (
+          <CompresserComponent/>
+        ) : (
+          ""
+        )}
 
-        {selectedCategory.toLowerCase().includes("pump") ? <PumpComponent /> : ""}
+{selectedCategory.toLowerCase().includes("chiller") ? (
+          <ChillerComponent />
+        ) : (
+          ""
+        )}
+        {selectedCategory.toLowerCase().includes("pump") ? (
+          <PumpComponent />
+        ) : (
+          ""
+        )}
+ {selectedCategory.toLowerCase().includes("ahus") ? (
+          <AhuComponent/>
+        ) : (
+          ""
+        )}
+        {selectedCategory.toLowerCase().includes("csus") ? (
+          <CsuComponent/>
+        ) : (
+          ""
+        )}
+{selectedCategory.toLowerCase().includes("cassette") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+        {selectedCategory.toLowerCase().includes("ductable split") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+         {selectedCategory.toLowerCase().includes("fcu ac") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+         {selectedCategory.toLowerCase().includes("flp ac") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+         {selectedCategory.toLowerCase().includes("hvac") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+         {selectedCategory.toLowerCase().includes("package") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+         {selectedCategory.toLowerCase().includes("roof top") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+         {selectedCategory.toLowerCase().includes("split ac") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+         {selectedCategory.toLowerCase().includes("vertical ac") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+         {selectedCategory.toLowerCase().includes("water cooler") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+         {selectedCategory.toLowerCase().includes("window ac") ? (
+          <CassetteAcComponent/>
+        ) : (
+          ""
+        )}
+        
+     
 
         {/* <Form.Item
         name="upload"
@@ -287,10 +361,13 @@ const AddProduct = (props) => {
       category_id: values.category,
       location_id: values.location,
       type: values.type ? values.type : null,
-      hpm: values.hpm ? values.hpm : "",
-      kwhp: values.kwhp ? values.kwhp : "",
+      hp: values.hp ? values.hp : "",
       capacity: values.capacity ? values.capacity : "",
+      gas: values.gas ? values.gas : "",
+      vbeltnumber:values.vbeltnumber ? values.vbeltnumber:"",
+      cfm:values.cfm ? values.cfm:"",
     };
+    
     axios
       .post(
         `${global.config.apiEndpoint}/product/add`,

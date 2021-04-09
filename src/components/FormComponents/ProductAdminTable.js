@@ -136,23 +136,23 @@ const ProductAdminTable = (props) => {
         });
       }
       // show delete option only for admin side
-      if(props.privacy!="user"){
-      dynamicCol = dynamicCol.concat([
-        {
-          title: "Operations",
-          dataIndex: "operation",
-          render: (_, record) =>
-            data.length >= 1 ? (
-              <Popconfirm
-                title="Sure to delete?"
-                onConfirm={() => deleleHandle(record)}
-              >
-                <a>Delete</a>
-              </Popconfirm>
-            ) : null,
-        },
-      ]);
-    }
+      if (props.privacy != "user") {
+        dynamicCol = dynamicCol.concat([
+          {
+            title: "Operations",
+            dataIndex: "operation",
+            render: (_, record) =>
+              data.length >= 1 ? (
+                <Popconfirm
+                  title="Sure to delete?"
+                  onConfirm={() => deleleHandle(record)}
+                >
+                  <a>Delete</a>
+                </Popconfirm>
+              ) : null,
+          },
+        ]);
+      }
       // console.log(dynamicCol)
       // let customColumns=
       // console.log(dynamicCol)
