@@ -5,7 +5,6 @@ import {
   InputNumber,
   Popconfirm,
   Form,
-  Typography,
   Select,
 } from "antd";
 import axios from "axios";
@@ -85,7 +84,13 @@ const ProductAdminTable = (props) => {
     console.log("called");
     let response = "";
     if (selectedCat != "") {
-      if (props.privacy == "user") {
+       if(props.privacy=="user" && props.searchByEqp==true) {
+        console.log("adad")
+        response = await axios.get(
+          `${global.config.apiEndpoint}/${props.type}/bycatid/${selectedCat}`
+        );
+      }
+      else if (props.privacy == "user") {
         console.log("yeah");
         response = await axios.get(
           `${global.config.apiEndpoint}/${props.type}/bycatandloc/`,
@@ -96,8 +101,10 @@ const ProductAdminTable = (props) => {
             },
           }
         );
-        console.log(response);
-      } else {
+        // console.log(response);
+      } 
+      
+      else {
         response = await axios.get(
           `${global.config.apiEndpoint}/${props.type}/bycatid/${selectedCat}`
         );
@@ -128,7 +135,7 @@ const ProductAdminTable = (props) => {
           let column = {
             title: productKey,
             dataIndex: productKey,
-            width: "10%",
+            width: "10%", 
             editable: true,
             className: "mytable",
           };
@@ -140,7 +147,7 @@ const ProductAdminTable = (props) => {
         dynamicCol = dynamicCol.concat([
           {
             title: "Operations",
-            dataIndex: "operation",
+            dataIndex: "op eration",
             render: (_, record) =>
               data.length >= 1 ? (
                 <Popconfirm

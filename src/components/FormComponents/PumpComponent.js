@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Form,
-  Input,
-  Row,
-  Col,
-  InputNumber,
-} from "antd";
+import { Form, Input, Row, Col, InputNumber } from "antd";
 
 const PumpComponent = (props) => {
   return (

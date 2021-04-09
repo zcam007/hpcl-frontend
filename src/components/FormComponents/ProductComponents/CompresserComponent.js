@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Form,
-  Input,
-  Row,
-  Col,
-  InputNumber,
-} from "antd";
+import { Form, Input, Row, Col, InputNumber } from "antd";
 
 const CompresserComponent = (props) => {
   return (
@@ -20,7 +14,7 @@ const CompresserComponent = (props) => {
             <InputNumber />
           </Form.Item>
         </Col> */}
-<Col>
+        <Col>
           <Form.Item name="gas" label="Gas">
             <Input />
           </Form.Item>
@@ -30,7 +24,6 @@ const CompresserComponent = (props) => {
             <Input />
           </Form.Item>
         </Col>
-
       </Row>
     </>
   );

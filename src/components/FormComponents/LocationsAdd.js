@@ -140,7 +140,7 @@ const AddLocationsToCategory = (props) => {
           setVisible(true);
         }}
       >
-        Add {props.type}
+        Add Locations
       </Button>
       <CollectionCreateForm
         visible={visible}

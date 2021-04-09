@@ -3,10 +3,9 @@ import "antd/dist/antd.css";
 import React, { useState } from "react";
 import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Login from "./components/Login/Login";
+// import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
-import useToken from "./userToken";
-
+// import useToken from "./userToken";
 
 function App() {
   // const token = getToken();
@@ -18,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <div className="wrapper">
-        <h1>Application</h1>
+        {/* <h1>Application</h1> */}
         <HashRouter>
           <Switch>
             <Route path="/dashboard">

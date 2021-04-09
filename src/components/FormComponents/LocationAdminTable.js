@@ -160,7 +160,7 @@ const LocationAdminTable = (props) => {
       },
     },
     {
-      title: "Operations",
+      title: "",
       dataIndex: "operation",
       render: (_, record) =>
         data.length >= 1 ? (
@@ -175,7 +175,7 @@ const LocationAdminTable = (props) => {
   ];
   if (props.type == "category") {
     columns.push({
-      title: "Operations",
+      title: "",
       dataIndex: "operation",
       render: (_, record) => <AddLocationsToCategory record={record} />,
     });

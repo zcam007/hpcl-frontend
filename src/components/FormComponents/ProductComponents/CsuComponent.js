@@ -1,26 +1,16 @@
 import React, { useEffect, useState } from "react";
-import {
-  Form,
-  Input,
-  Row,
-  Col,
-  InputNumber,
-} from "antd";
+import { Form, Input, Row, Col, InputNumber } from "antd";
 
 const CsuComponent = (props) => {
   return (
     <>
       <Row>
-                
         <Col>
-          <Form.Item
-            name="cfm"
-            label="CFM"
-          >
+          <Form.Item name="cfm" label="CFM">
             <InputNumber />
           </Form.Item>
         </Col>
-<Col>
+        <Col>
           <Form.Item
             name="rpm"
             label="RPM"
@@ -39,7 +29,6 @@ const CsuComponent = (props) => {
             <Input />
           </Form.Item>
         </Col>
-
       </Row>
     </>
   );

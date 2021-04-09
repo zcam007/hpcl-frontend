@@ -9,8 +9,6 @@ import useToken from "../../userToken";
 import Login from "../Login/Login";
 const { TabPane } = Tabs;
 
-
-
 function callback(key) {
   console.log(key);
 }
@@ -25,8 +23,6 @@ export default function Admin() {
       <Tabs defaultActiveKey="1" centered onChange={callback}>
         <TabPane tab="Location" key="1">
           <AddLocation type="location" />
-
-          {/* <LocationAdminTable/> */}
           <LocationAdminTable type="location" />
         </TabPane>
         <TabPane tab="Equipment" key="2">

@@ -246,12 +246,12 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           </Col>
         </Row>
         {selectedCategory.toLowerCase().includes("compresser") ? (
-          <CompresserComponent/>
+          <CompresserComponent />
         ) : (
           ""
         )}
 
-{selectedCategory.toLowerCase().includes("chiller") ? (
+        {selectedCategory.toLowerCase().includes("chiller") ? (
           <ChillerComponent />
         ) : (
           ""
@@ -261,73 +261,71 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         ) : (
           ""
         )}
- {selectedCategory.toLowerCase().includes("ahus") ? (
-          <AhuComponent/>
+        {selectedCategory.toLowerCase().includes("ahus") ? (
+          <AhuComponent />
         ) : (
           ""
         )}
         {selectedCategory.toLowerCase().includes("csus") ? (
-          <CsuComponent/>
+          <CsuComponent />
         ) : (
           ""
         )}
-{selectedCategory.toLowerCase().includes("cassette") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("cassette") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
         {selectedCategory.toLowerCase().includes("ductable split") ? (
-          <CassetteAcComponent/>
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-         {selectedCategory.toLowerCase().includes("fcu ac") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("fcu ac") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-         {selectedCategory.toLowerCase().includes("flp ac") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("flp ac") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-         {selectedCategory.toLowerCase().includes("hvac") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("hvac") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-         {selectedCategory.toLowerCase().includes("package") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("package") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-         {selectedCategory.toLowerCase().includes("roof top") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("roof top") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-         {selectedCategory.toLowerCase().includes("split ac") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("split ac") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-         {selectedCategory.toLowerCase().includes("vertical ac") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("vertical ac") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-         {selectedCategory.toLowerCase().includes("water cooler") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("water cooler") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-         {selectedCategory.toLowerCase().includes("window ac") ? (
-          <CassetteAcComponent/>
+        {selectedCategory.toLowerCase().includes("window ac") ? (
+          <CassetteAcComponent />
         ) : (
           ""
         )}
-        
-     
 
         {/* <Form.Item
         name="upload"
@@ -364,10 +362,10 @@ const AddProduct = (props) => {
       hp: values.hp ? values.hp : "",
       capacity: values.capacity ? values.capacity : "",
       gas: values.gas ? values.gas : "",
-      vbeltnumber:values.vbeltnumber ? values.vbeltnumber:"",
-      cfm:values.cfm ? values.cfm:"",
+      vbeltnumber: values.vbeltnumber ? values.vbeltnumber : "",
+      cfm: values.cfm ? values.cfm : "",
     };
-    
+
     axios
       .post(
         `${global.config.apiEndpoint}/product/add`,

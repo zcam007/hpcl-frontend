@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  Form,
-  Input,
-  Row,
-  Col,
-  InputNumber,
-} from "antd";
+import { Form, Input, Row, Col, InputNumber } from "antd";
 
 const AhuComponent = (props) => {
   return (
     <>
       <Row>
-      <Col>
+        <Col>
           <Form.Item name="vbeltnumber" label="'V' belt No.">
             <Input />
           </Form.Item>
