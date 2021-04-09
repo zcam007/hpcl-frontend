@@ -184,7 +184,15 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
                 },
               ]}
             >
-              <Input />
+              {/* <Input /> */}
+              <Select
+          placeholder="Select a option"
+          allowClear
+        >
+          <Option value="1Phase">1 Phase</Option>
+          <Option value="2Phase">2 Phase</Option>
+ 
+        </Select>
             </Form.Item>
           </Col>
         </Row>
