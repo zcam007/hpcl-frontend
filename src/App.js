@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <div className="wrapper">
         {/* <h1>Application</h1> */}
-        <HashRouter>
+        <BrowserRouter>
           <Switch>
             <Route path="/dashboard">
               <Dashboard />
@@ -27,7 +27,7 @@ function App() {
               <Admin />
             </Route>
           </Switch>
-        </HashRouter>
+        </BrowserRouter>
       </div>
     </div>
   );
