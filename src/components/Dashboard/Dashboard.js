@@ -17,7 +17,6 @@ setSelectedOption(e)
     <div>
     <div style={{height:'800px'}}>
 
-      <h3>Display Page</h3>
       <Row style={{marginBottom:'40px'}}>
       <Select
           // value={selectedOption}

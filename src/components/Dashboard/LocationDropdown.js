@@ -33,7 +33,7 @@ class LocationDropdown extends Component {
       selectedCategory: e,
       validationError: e === "" ? "You must select your category" : "",
     });
-    console.log(e);
+    // console.log(e);
     // console.log(this.state.completeData.result[e])
     this.state.selectedCategoryId = e;
   }
@@ -47,6 +47,7 @@ class LocationDropdown extends Component {
     selectedCategoryId: "",
     validationError: "",
     completeData: "",
+    isLoading:true,
   };
   componentDidMount() {
     fetch(global.config.apiEndpoint + "/location/all")
@@ -60,6 +61,9 @@ class LocationDropdown extends Component {
         let locationsFromApi = data.result.map((d) => {
           return { value: i++, display: d.name };
         });
+        if(data.result.length>0){
+          this.setState({isLoading:false})
+        }
         this.setState({
           locations: [{ value: "", display: "Select your Location" }].concat(
             locationsFromApi
@@ -77,6 +81,7 @@ class LocationDropdown extends Component {
           value={this.state.selectedLocation}
           style={{ width: 220 }}
           onChange={(e) => this.onLocationChange(e)}
+          loading={this.state.isLoading}
         >
           {this.state.locations.map((location) => (
             <Option key={location.value} value={location.value}>

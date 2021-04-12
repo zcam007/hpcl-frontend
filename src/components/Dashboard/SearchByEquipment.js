@@ -24,6 +24,7 @@ class EquipmentDropdown extends Component {
     selectedCategoryId: "",
     validationError: "",
     completeData: "",
+    loadingState:true,
   };
   componentDidMount() {
     fetch(global.config.apiEndpoint + "/category/all")
@@ -37,6 +38,9 @@ class EquipmentDropdown extends Component {
         let categoriesFromApi = data.result.map((d) => {
           return { value: i++, display: d.name };
         });
+        if(data.result.length > 0){
+          this.setState({loadingState:false})
+        }
         this.setState({
             categories: [{ value: "", display: "Select your Equipment" }].concat(
             categoriesFromApi
@@ -54,10 +58,12 @@ class EquipmentDropdown extends Component {
           value={this.state.selectedCategory}
           style={{ width: 220 }}
           onChange={(e) => this.onCategoryChange(e)}
+          loading={this.state.loadingState}
         >
           {this.state.categories.map((category) => (
             <Option key={category.value} value={category.value}>
               {category.display}
+              
             </Option>
           ))}
         </Select>

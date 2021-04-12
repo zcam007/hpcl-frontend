@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../../config";
 import "./Login.css";
+import { Row } from "antd";
 
 async function loginUser(credentials) {
   return fetch(`${global.config.apiEndpoint}/auth/login`, {
@@ -28,12 +29,15 @@ export default function Login({ setToken }) {
 
   return (
     <div className="login-wrapper">
-      <h1>Please Log In</h1>
-      <form onSubmit={handleSubmit}>
+      <h3 class='heading'>Sign In</h3>
+      <form class='signinForm' onSubmit={handleSubmit}>
+        <Row>
         <label>
           <p>Username</p>
           <input type="text" onChange={(e) => setEmail(e.target.value)} />
         </label>
+        </Row>
+        <Row>
         <label>
           <p>Password</p>
           <input
@@ -41,6 +45,7 @@ export default function Login({ setToken }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+        </Row>
         <div>
           <button type="submit">Submit</button>
         </div>

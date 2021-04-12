@@ -19,7 +19,7 @@ export default function Admin() {
   }
   return (
     <div>
-      <h3>This is admin side of the portal</h3>
+      {/* <h3>This is admin side of the portal</h3> */}
       <Tabs defaultActiveKey="1" centered onChange={callback}>
         <TabPane tab="Location" key="1">
           <AddLocation type="location" />
