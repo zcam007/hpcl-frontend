@@ -8,7 +8,6 @@ import {
   Select,
 } from "antd";
 import axios from "axios";
-import AddLocationsToCategory from "../FormComponents/LocationsAdd";
 import "../../config";
 var querystring = require("querystring");
 const { Option } = Select;

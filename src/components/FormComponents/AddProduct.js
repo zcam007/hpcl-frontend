@@ -39,8 +39,8 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
       // console.log(d)
       return { key: i++, name: d.name, description: d.description, id: d._id };
     });
-    if (key == "location") setLocations(dataFromApi);
-    if (key == "category") setCategories(dataFromApi);
+    if (key === "location") setLocations(dataFromApi);
+    if (key === "category") setCategories(dataFromApi);
   }
   //   const normFile = (e) => {
   //     console.log('Upload event:', e);

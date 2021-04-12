@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Form, Input, Row, Col, InputNumber } from "antd";
+import React from "react";
+import { Form, Input, Row, Col } from "antd";
 
 const CompresserComponent = (props) => {
   return (

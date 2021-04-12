@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Form, Input, Row, Col, InputNumber } from "antd";
 
 const AhuComponent = (props) => {

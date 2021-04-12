@@ -15,7 +15,7 @@ setSelectedOption(e)
 }
   return (
     <div>
-    <div style={{height:'800px'}}>
+    <div style={{height:'700px'}}>
 
       <Row style={{marginBottom:'40px'}}>
       <Select
@@ -33,23 +33,23 @@ setSelectedOption(e)
         
         </Select>
         </Row>
-     {selectedOption=="vialocaton"?<LocationDropdown />:""}   
-     {selectedOption=="viaEquipment"?<EquipmentDropdown />:""}   
+     {selectedOption==="vialocaton"?<LocationDropdown />:""}   
+     {selectedOption==="viaEquipment"?<EquipmentDropdown />:""}   
     
     </div>
     <Footer
     columns={[
       {
         icon: (
-          <img src="https://gw.alipayobjects.com/zos/rmsportal/XuVpGqBFxXplzvLjJBZB.svg" />
+          <img alt="test" src="" />
         ),
-        title: 'Copyrighted data',
+        title: 'We own or license all copyright rights in the text, images, photographs, user interface, data and other content provided. The material contained in this website is distribured without profit for research and educational purposes. If you wish to use any copyrighted material from this site for purposes of your own, you must obtain expressed permission from the copyright owner.',
         url: 'https://hello.chandu.dev',
-        description: '知识创作与分享工具',
+        description: 'Lorem ipsum',
         openExternal: true,
       },
     ]}
-    bottom="Made with ❤️ by Chandu"
+    bottom="Made with ❤️     by Chandu"
   />
 </div>
   );
